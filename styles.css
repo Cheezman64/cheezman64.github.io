@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,700;1,700&family=Titan+One&display=swap');
+
+.asap {
+    font-family: "Asap";
+}
+
+.titanone {
+    font-family: "Titan One";
+    font-size: 320%;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
