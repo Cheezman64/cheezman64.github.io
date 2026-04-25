@@ -20,9 +20,30 @@
     color: white;
     padding: 12px;
     border: none;
-    border-width: 4px;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: black;
+    margin: 5px;
+}
 
+.button:hover{
+    background-color: #ee8b02;
+}
+
+body {
+    background-image: url("images/background.png");
+}
+
+div {
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    width: fit-content;
+}
+
+.white {
+    color: white;
+}
+
+.darkbg {
+    background-color: rgba(0, 0, 0, 25%);
 }
