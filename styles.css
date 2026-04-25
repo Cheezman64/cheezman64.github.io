@@ -18,9 +18,11 @@
 .button {
     background-color: #f4ce47;
     color: white;
-    font-size: 15px;
     padding: 12px;
-    border-color: #ee8b02;
+    border: none;
+    border-width: 4px;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: black;
+
 }
