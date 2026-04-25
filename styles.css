@@ -14,3 +14,13 @@
     justify-content: center;
     text-align: center;
 }
+
+.button {
+    background-color: #f4ce47;
+    color: white;
+    font-size: 15px;
+    padding: 12px;
+    border-color: #ee8b02;
+    border-radius: 5px;
+    cursor: pointer;
+}
