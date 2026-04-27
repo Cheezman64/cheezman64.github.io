@@ -107,14 +107,15 @@ h1#projects {
 ul#carousel {
     width: 60vw;
     height: 30vh;
-    padding: 20px;
+    padding: 30px;
     padding-top: 2px;
     display: flex;
     gap: 4vw;
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     margin: 10px;
     anchor-name: --my-carousel;
+    justify-self: center;
 }
 
 li{
@@ -174,7 +175,6 @@ ul::scroll-button(left) {
   right: calc(anchor(left) - 17px);
   bottom: calc(anchor(center));
 }
-
 
 ul::scroll-button(right) {
   left: calc(anchor(right) - 17px);
