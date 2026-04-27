@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,700;1,700&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,700;1,700&family=Jersey+10&family=Titan+One&display=swap');
+
+
+/* classes */
 
 .asap {
     font-family: "Asap";
@@ -6,7 +9,15 @@
 
 .titanone {
     font-family: "Titan One";
-    font-size: 320%;
+}
+
+.speedblock {
+    font-family: "Speedblock V4";
+    src: url(/resources/SpeedblockV4-Regular.ttf)
+}
+
+.pixelfont {
+    font-family: "Jersey 10";
 }
 
 .centre {
@@ -29,8 +40,52 @@
     background-color: #ee8b02;
 }
 
-body {
+.white {
+    color: white;
+}
+
+.darkbg {
+    background-color: rgba(0, 0, 0, 25%);
+}
+
+.txtshadow {
+    text-shadow: 3px 3px black;
+}
+
+.scrollingbg {
+    overflow: hidden;
+    animation: bgscroll 100s linear infinite;
+}
+
+.buttonlink {
+    text-decoration: none;
+}
+
+.flyInL {
+    animation: flyInL 1s ease-in-out;
+}
+
+.flyInR {
+    animation: flyInR 1s ease-in-out;
+}
+
+.grow {
+    animation: grow 0.3s ease-in-out;
+}
+
+/* elements */
+
+h1#title {
+    font-size: calc(15vw);
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+body{
     background-image: url("images/background.png");
+    background-size: 75%;
+    animation: bgscroll 20s linear infinite;
+    background-repeat: repeat;
 }
 
 div {
@@ -41,10 +96,136 @@ div {
     height: fit-content;
 }
 
-.white {
-    color: white;
+h1#projects {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
 }
 
-.darkbg {
-    background-color: rgba(0, 0, 0, 25%);
+/* carousel */
+
+ul#carousel {
+    width: 60vw;
+    height: 20vw;
+    padding: 20px;
+    padding-top: 2px;
+    display: flex;
+    gap: 4vw;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin: 10px;
+    anchor-name: --my-carousel;
+}
+
+li{
+    list-style-type: none;
+    background-color: #f4ce47;
+    border: 10px solid #ee8b02;
+    padding: 20px;
+    flex: 0 0 95%;
+    scroll-snap-align: center;
+}
+
+li:nth-child(even) {
+    background-color: #ee8b02;
+    border: 10px solid #f4ce47;
+}
+
+
+ul::scroll-button(*) {
+  border: 0;
+  font-size: 4vw;
+  font-family: "Jersey 10";
+  background: #ee8b02;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  scale: 100%;
+  cursor: pointer;
+}
+
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+  transform: scale(110%);
+}
+
+ul::scroll-button(*):active {
+  transform: scale(90%);
+}
+
+ul::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+ul::scroll-button(left) {
+  content: " <" / "Previous";
+}
+
+ul::scroll-button(right) {
+  content: " >" / "Next";
+}
+
+ul::scroll-button(*) {
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+ul::scroll-button(left) {
+  right: calc(anchor(left) - 17px);
+  bottom: calc(anchor(center));
+}
+
+
+ul::scroll-button(right) {
+  left: calc(anchor(right) - 17px);
+  bottom: calc(anchor(center));
+}
+
+/* keyframes */
+
+@keyframes grow {
+    0%{
+        transform: scale(0%, 0%);
+    }
+    
+    60%{
+        transform: scale(125%, 125%);
+    }
+
+    100%{
+        transform: scale(100%, 100%);
+    }
+}
+
+@keyframes flyInL {
+    0%{
+        transform: translateX(-400%)
+    }
+
+    60%{
+        transform: translateX(20%)
+    }
+
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes flyInR {
+    0%{
+        transform: translateX(400%)
+    }
+
+    60%{
+        transform: translateX(-20%)
+    }
+
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes bgscroll {
+    from { background-position: 0px 0px; }
+    to { background-position: 690px 690px}
 }
