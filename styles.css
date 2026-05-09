@@ -16,6 +16,12 @@
     src: url(/resources/SpeedblockV4-Regular.ttf)
 }
 
+.jetbrains {
+    font-family: "JetBrains Mono"; font-weight: 900;
+    src: url(/resources/JetBrainsMono[wght].ttf);
+    text-transform: uppercase;
+}
+
 .pixelfont {
     font-family: "Jersey 10";
 }
